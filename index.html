@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visor de Cuentos PDF Accesible</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Librería PDF.js para procesar el PDF y extraer texto -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+    <!-- Librería PageFlip para el efecto de pasar página -->
+    <script src="https://cdn.jsdelivr.net/npm/page-flip/dist/js/page-flip.browser.js"></script>
+</head>
+<body>
+    <header class="header">
+        <h1>Lector de Cuentos Accesible</h1>
+        
+        <!-- Barra de controles accesibles -->
+        <div class="controls-bar" aria-label="Controles de lectura y navegación">
+            <div class="control-group">
+                <button id="btn-prev" class="btn btn-nav" aria-label="Página anterior">◀ Anterior</button>
+                <span id="page-indicator" class="page-indicator">Página 1 de 1</span>
+                <button id="btn-next" class="btn btn-nav" aria-label="Página siguiente">Siguiente ▶</button>
+            </div>
+
+            <div class="control-group">
+                <button id="btn-font-decrease" class="btn btn-font" aria-label="Achicar letra">A-</button>
+                <button id="btn-font-increase" class="btn btn-font" aria-label="Agrandar letra">A+</button>
+                <button id="btn-read" class="btn btn-audio" aria-label="Lectura en voz alta">🔊 Leer Página</button>
+            </div>
+        </div>
+
+        <div id="loading" class="loading">Cargando cuento.pdf...</div>
+    </header>
+
+    <main class="book-container">
+        <!-- Contenedor del Libro -->
+        <div id="flip-book" class="flip-book"></div>
+
+        <!-- Mano indicadora animada para pasar página -->
+        <div id="hand-pointer" class="hand-pointer" aria-hidden="true">👈</div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
